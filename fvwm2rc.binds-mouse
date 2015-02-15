@@ -1,0 +1,45 @@
+###################################################################
+##---------------------------------------------------------------##
+### Bindowanie myszy						###
+##---------------------------------------------------------------##
+###################################################################
+
+##---------------------------------------------------------------##
+### Window list
+
+Mouse 1     R       A   -
+Mouse 3     R       A   - 
+Mouse 2     R       A   WindowList NoCurrentDeskTitle NoGeometry SortByClass NoHotkeys
+
+##---------------------------------------------------------------#
+### Przyciski na pasku tytułowym
+
+Mouse 1     1       A   Menu MenuFvwmWindowOps
+Mouse 1     6       A   Thumbnail
+Mouse 1     4       A   Maximize
+Mouse 1     2       A   Close
+
+##---------------------------------------------------------------##
+### Okna, Ramki i inne
+
+Mouse 1     FS      A   ResizeFunc
+Mouse 2     W       C   ResizeFunc
+Mouse 1     W       M   MoveFunc
+Mouse 3     W       M   ResizeFunc
+Mouse 3     TSIF    A   RaiseLower
+
+##---------------------------------------------------------------##
+### Bindowanie ikon 绑定的图标
+
+Mouse 1     I       A   Iconify
+Mouse 2     I       A   Move
+
+##---------------------------------------------------------------##
+### Zwijanie okna rolką myszy 滚动鼠标滚轮窗口
+
+Mouse 4     T       A   WindowShade True
+Mouse 5     T       A   WindowShade False
+Mouse 3 T A Menu FvwmRMenu
+
+#by zlf
+Mouse 3 R A Menu FvwmRMenu

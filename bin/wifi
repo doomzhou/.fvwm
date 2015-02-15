@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "Wi-Fi: "$(grep wlo1 /proc/net/wireless | awk {'print $3'})""

@@ -1,0 +1,80 @@
+###by zlf i change the Colorset 5--->100 three point 
+WindowTitle     {Battery}
+WindowSize      24 22
+Colorset 100
+
+Init
+Begin
+#	Set $BattCritical = (GetOutput {echo "$BatteryCritical"} 1 -1)
+#	Set $BattLow = (GetOutput {echo "$BatteryLow"} 1 -1)
+	Set $BattCritical = (GetOutput {echo "10"} 1 -1)
+	Set $BattLow = (GetOutput {echo "20"} 1 -1)
+	Set $toggled = 0
+End
+
+PeriodicTasks
+Begin
+	If (RemainderOfDiv (GetTime) 1)==0 Then
+	Begin
+		Set $BattPercent = (GetOutput {acpi | cut -d"," -f2 | sed -e 's/%//g'|sed -e 's/ //g'} 1 -1)
+		Set $BattState = (GetOutput {acpi | cut -d"," -f1 | cut -d":" -f2 | sed -e 's/ //g'} 1 -1)
+		If $BattPercent <= $BattCritical Then
+		Begin
+			If $BattState == Charging Then
+				Set $IconImg = {battery/CritCharge.png}				# Critical battery, charging
+			If $BattState == Discharging Then
+				Set $IconImg = {battery/CritDischarge.png}			# Critical battery, discharging
+		End
+		Else
+		Begin
+			If $BattPercent <= $BattLow Then
+			Begin
+				If $BattState == Charging Then
+					Set $IconImg = {battery/LowCharge.png}			# Low battery, charging
+				If $BattState == Discharging Then
+					Set $IconImg = {battery/LowDischarge.png}		# Low battery, discharging
+			End
+			Else
+			Begin
+				If $BattPercent == 100 Then
+					Set $IconImg = {battery/FullCharge.png}		# Completely charged
+				Else
+				Begin
+					If $BattState == Charging Then
+						Set $IconImg = {battery/GoodCharge.png}		# Good battery, charging
+					If $BattState == Discharging Then
+						Set $IconImg = {battery/GoodDischarge.png}	# Good battery, discharging
+				End
+			End
+		End
+		If $IconImg <> $PrevIconImg Then
+		Begin
+			ChangeIcon 1 $IconImg
+			Set $PrevIconImg = $IconImg
+		End
+	End
+End
+
+Widget                  1
+Property
+        Type            ItemDraw
+        Size            24 22
+        Position        0 0
+	Font		"Shadow=1 se:xft:HandelGothic BT:encoding=iso10646-1:size=7"
+        Flags           NoFocus NoReliefString
+Main
+Case message of
+	SingleClic:
+	Begin
+		If $toggled==0 Then
+		Begin
+			Set $toggled = 1
+			Do {Module FvwmScript scripts/BatteryPopup}
+		End
+		Else
+		Begin
+			Set $toggled = 0
+			Do {KillModule FvwmScript scripts/BatteryPopup}
+		End
+	End
+End

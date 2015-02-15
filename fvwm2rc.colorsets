@@ -1,0 +1,48 @@
+###################################################################
+##---------------------------------------------------------------##
+### Kolory							###
+##---------------------------------------------------------------##
+###################################################################
+
+Colorset 0 RootTransparent, Tint #ffffff 0, IconAlpha 60
+Colorset 1 RootTransparent, Tint #ffffff 50
+Colorset 2 RootTransparent, Tint #ffffff 90, fg #4890A3, fgsh #ffffff, bg #ffffff, sh #ffffff, hi #ffffff
+Colorset 3 fg #4890A3, bg #ffffff, fgsh #ffffff, sh #ffffff, hi #ffffff
+Colorset 4 RootTransparent, Tint #ffffff 30
+Colorset 5 fg #4890A3, Pixmap macosx/dock_center2.png
+Colorset 6 fg #4890A3, Pixmap macosx/menu.png
+Colorset 7 fg #4890A3, Pixmap macosx/main1.png
+Colorset 9 RootTransparent, IconAlpha 60
+Colorset 10 fg #4890A3, fgsh #ffffff, bg #ffffff, sh #ffffff, hi #ffffff, RootTransparent, Tint #ffffff 60
+Colorset 11 RootTransparent, Tint #ffffff , IconAlpha 100
+Colorset 12 RootTransparent, Tint #ffffff 60, fg #4890A3, fgsh #ffffff, bg #ffffff, sh #ffffff, hi #ffffff
+Colorset 13 fg #000000, Pixmap decoration/title_bar1.png
+
+
+##########
+# 配色
+##########
+
+###无焦点窗口
+Colorset 100 fg green,bg blue,fgsh black,RootTransparent Buffer,Tint #000000 50
+
+###焦点窗口
+Colorset 101 fg #0ff,bg #0ff,fgsh black,RootTransparent Buffer,Tint #6b7550 30
+
+###无焦点图标
+Colorset 102 fg white,bg #888,fgsh black,RootTransparent Buffer,Tint #ccc 20
+
+###菜单
+Colorset 103 fg white,bg blue,fgsh black,RootTransparent Buffer,Tint #268b83 40
+
+###fvwmbutton和page的修饰
+Colorset 104 fg white,bg #888,fgsh black,RootTransparent Buffer,Tint #000 70
+
+###焦点按钮
+Colorset 105 fg #0ff,bg #0ff,fgsh black,RootTransparent Buffer,Tint #0ff 10
+
+Colorset 106 fg white,bg #888,fgsh black,RootTransparent Buffer,Tint #00f 100
+
+### FvwmPager
+Colorset 107 fg #0ff,bg #0ff,fgsh black,RootTransparent Buffer,Tint #0ff 10
+Colorset 108 fg #0ff,bg #0ff,RootTransparent,Tint #0c121e 100 

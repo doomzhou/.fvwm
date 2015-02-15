@@ -1,0 +1,18 @@
+###################################################################
+##---------------------------------------------------------------##
+### Miniaturki zminimalizowanych okien				###
+##---------------------------------------------------------------##
+###################################################################
+
+SetEnv fvwm_icon_size 120
+DestroyFunc Thumbnail
+AddToFunc   Thumbnail
++ I Raise
++ I SetEnv Icon-$[w.id] $[w.IconFile]
++ I ThisWindow (!Shaded, Iconifiable, !Iconic) PipeRead \
+    "$[FVWM_USERDIR]/bin/thumb $[w.id] $[fvwm_icon_size] $[FVWM_USERDIR]/thumbnails/icon.tmp.$[w.id].png '$[w.miniiconfile]'"
++ I Iconify
+
+DestroyFunc DeThumbnail
+AddToFunc   DeThumbnail
++ I Exec exec "rm $[FVWM_USERDIR]/thumbnails/*"

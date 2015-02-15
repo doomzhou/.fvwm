@@ -1,0 +1,39 @@
+###################################################################
+##---------------------------------------------------------------##
+### Dekoracja okien						###
+##---------------------------------------------------------------##
+###################################################################
+
+DestroyFunc arsen-decor
+AddToFunc   arsen-decor
+ ###by zlf : i change the Colorest 13--->101 and 13 ---> 102
++ I TitleStyle AllActive ( Colorset 101 )     
++ I TitleStyle AllInactive ( Colorset 102 )
++ I TitleStyle RightJustified
++ I ButtonStyle All Simple -- UseTitleStyle 
+arsen-decor
+
+AddButtonStyle 1 \
+    ActiveUp   (Pixmap decoration/doom.png ) \
+    ActiveDown (Pixmap decoration/doom.png ) \
+    Inactive   (Pixmap decoration/inact.png )
+AddButtonStyle 6 \
+    ActiveUp   (Pixmap decoration/D.png ) \
+    ActiveDown (Pixmap decoration/D.png ) \
+    Inactive   (Pixmap decoration/inactive.png )
+AddButtonStyle 4 \
+    ActiveUp   (Pixmap decoration/O.png ) \
+    ActiveDown (Pixmap decoration/O.png ) \
+    Inactive   (Pixmap decoration/inactive.png )
+AddButtonStyle 2 \
+    ActiveUp   (Pixmap decoration/M.png ) \
+    ActiveDown (Pixmap decoration/M.png ) \
+    Inactive   (Pixmap decoration/inactive.png )
+
+AddToFunc   arsen-decor-reload
++ I BorderStyle Simple -- HiddenHandles NoInset
++ I TitleStyle  -- Flat
++ I ButtonStyle All -- Flat
++ I TitleStyle Height 19
+arsen-decor-reload
+

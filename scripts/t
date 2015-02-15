@@ -1,0 +1,36 @@
+###by zlf i change the Colorset 5--->100 three point 
+WindowTitle {T2}
+WindowSize 50 22	
+WindowPosition 0 0	
+Colorset 100
+Font		"Shadow=1 se:xft:HandelGothic BT:encoding=iso10646-1:size=7"
+
+Init
+ Begin
+        Set $temp=(GetOutput {sensors | grep Physical | cut -d ' ' -f 4 | cut -c2-8 } 1 -1) (GetOutput {sensors | grep Physical |cut -d ' ' -f 5| cut -c2-8} 1 -1)
+    ChangeTitle 1 $temp
+ End
+
+PeriodicTasks
+Begin
+    If (RemainderOfDiv (GetTime) 30)==0 Then
+    Begin
+        Set $temp=(GetOutput {sensors | grep Physical | cut -d ' ' -f 4 | cut -c2-8 } 1 -1) (GetOutput {sensors | grep Physical |cut -d ' ' -f 5| cut -c2-8} 1 -1)
+        ChangeTitle 1 $temp
+    End
+End
+
+Widget 1
+Property
+ Size 60 22
+ Position 0 0
+ Colorset 100
+ Font		"Shadow=1 se:xft:HandelGothic BT:encoding=iso10646-1:size=7"
+ Flags Left
+ Type ItemDraw
+ Title {OK}
+End
+
+
+
+

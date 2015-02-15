@@ -1,0 +1,99 @@
+###################################################################
+##---------------------------------------------------------------##
+### Ustawienia PATH dla pixmap 					###
+##---------------------------------------------------------------##
+###################################################################
+
+ImagePath ${HOME}/.fvwm/images:+
+
+###################################################################
+##---------------------------------------------------------------##
+### Zmienne							###
+##---------------------------------------------------------------##
+###################################################################
+
+SetEnv fvwm_terminal "terminator -m"
+##by zlf
+#SetEnv fvwm_terminal "konsole"
+SetEnv fvwm_tail "xterm -name tail -g 203x7+21+60 -tr +sb -rv -fg white"
+SetEnv fvwm_ncmpc "xterm -name NCMPC -g 51x46+21+60 -tr +sb -fg white -bg black -tint green"
+#SetEnv fvwm_editor "terminal "
+SetEnv fvwm_editor gvim
+
+###################################################################
+##---------------------------------------------------------------##
+### Tapeta 							###
+##---------------------------------------------------------------##
+###################################################################
+
+SetEnv fvwm_root "habak -ms"
+SetEnv fvwm_wallpaper_dir $[HOME]/Media/tapety
+#SetEnv fvwm_wallpaper $[FVWM_USERDIR]/wallpapers/
+#by zlf
+Setenv fvwm_wallpaper $[fvwm_wallpaper_dir]/spyvsspy.jpg
+
+###################################################################
+##---------------------------------------------------------------##
+### Skrypty i foldery						###
+##---------------------------------------------------------------##
+###################################################################
+
+SetEnv fvwm_script_path $[FVWM_USERDIR]/scripts/
+SetEnv fvwm_icon_path $[FVWM_USERDIR]/images/icons
+SetEnv fvwm_config_path $[FVWM_USERDIR]
+
+###################################################################
+##---------------------------------------------------------------##
+### Startup							###
+##---------------------------------------------------------------##
+###################################################################
+
+AddtoFunc InitFunction
++ I Exec xrdb ~/.Xresources
+##+ I Exec exec conky
++ I Exec exec trayer --align right --width 10 --height 20 --transparent true --alpha 100 --tint 0xff8800
+
+DestroyFunc StartFunction
+AddToFunc StartFunction
++ I Exec exec $[fvwm_root] $[fvwm_wallpaper]
++ I Module FvwmCommandS
++ I Module FvwmProxy
++ I Module FvwmEvent
+#+ I Module FvwmButtons -g 500x35+0-0 Panel
++ I Module FvwmButtons -g 35x500+0+268 Panel
++ I Module FvwmButtons -g 1366x22-0+0 MacMenu
++ I Exec exec ${fvwm_tail} -e ${fvwm_script_path}/tail
+
+###################################################################
+##---------------------------------------------------------------##
+#### Wykonywane przy wyjściu z FVWM
+##---------------------------------------------------------------##
+###################################################################
+
+DestroyFunc ExitFunction
+AddToFunc ExitFunction
++ I Test (!ToRestart) Exec exec rm -f $[HOME]/.fvwm/thumbnails/icon.tmp.*
+
+###################################################################
+##---------------------------------------------------------------##
+### Moduły							###
+##---------------------------------------------------------------##
+###################################################################
+#
+###################################################################
+#change left-rigth
+#Exec xmodmap -e "pointer = 3 2 1 4 5"
+
+Read fvwm2rc.settings
+Read fvwm2rc.misc
+Read fvwm2rc.cursors
+Read fvwm2rc.functions
+Read fvwm2rc.style
+Read fvwm2rc.colorsets
+Read fvwm2rc.wmdecor
+Read fvwm2rc.binds-mouse
+Read fvwm2rc.binds-keys
+Read fvwm2rc.menu
+Read fvwm2rc.macmenu
+Read fvwm2rc.thumbnails
+Read fvwm2rc.panel

@@ -1,0 +1,54 @@
+###by zlf i change the Colorset 5--->100 three point 
+WindowTitle {clock}
+WindowSize  120 22
+Font "Shadow=1 se:xft:Lat2-Terminus16:encoding=iso10646-1:size=9"
+Colorset 100
+
+Init
+ Begin
+   Set $display= time
+
+Set $tmp = (GetOutput {exec date "+%b%d %a %R"} 1 -1)
+
+  ChangeTitle 1 $tmp
+End
+
+PeriodicTasks
+  Begin 
+  If (RemainderOfDiv (GetTime) 60)==0 Then
+  Begin
+
+Set $tmp = (GetOutput {exec date "+%b%d %a %R"} 1 -1)
+
+    ChangeFont 1 {Shadow=1 se:xft:Lat2-Terminus16:encoding=iso10646-1:size=9}
+    ChangeTitle  1 $tmp
+  End
+End
+
+Widget 1
+Property
+ Position 0 0
+ Size 120 22
+ Type ItemDraw
+ Flags NoReliefString
+ Title {}
+ Colorset 100
+Main
+ Case message of
+  SingleClic :
+  Begin
+    If $display=={time} Then
+    Begin
+      Set $display= date
+      ChangeFont 1 {Shadow=1 se:xft:Lat2-Terminus16:encoding=iso10646-1:size=9}
+      Set $tmp = (GetOutput {exec date "+%d/%m"} 1 -1)
+    End
+    Else
+    Begin
+      Set $display= time
+      ChangeFont 1 {Shadow=1 se:xft:Lat2-Terminus16:encoding=iso10646-1:size=9}
+      Set $tmp = (GetOutput {exec date "+%s"} 1 -1)
+    End
+    ChangeTitle  1 $tmp
+  End
+End

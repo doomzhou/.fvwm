@@ -1,0 +1,28 @@
+WindowTitle     {BatteryPopup}
+WindowSize      330 30
+WindowPosition	948 22
+Font            "Shadow=1 se:xft:HandelGothic BT:encoding=iso10646-1:size=8"
+Colorset        2
+
+Init
+Begin
+	Set $acpi = (GetOutput {acpi} 1 -1)
+	ChangeTitle 1 $acpi
+End
+
+PeriodicTasks
+Begin
+End
+
+Widget                  1
+Property
+        Type            ItemDraw
+        Size            330 15
+        Position        0 7
+        Flags           NoFocus NoReliefString Left
+Main
+Case message of
+	SingleClic:
+	Begin
+	End
+End

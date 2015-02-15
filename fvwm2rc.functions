@@ -1,0 +1,170 @@
+###################################################################
+##---------------------------------------------------------------##
+### Funkcje FVWM						###
+##---------------------------------------------------------------##
+###################################################################
+
+##---------------------------------------------------------------##
+### Funcja Center
+
+DestroyFunc Center
+AddToFunc Center
++ I PlaceAgain
+
+DestroyFunc Window-List-page
+AddToFunc Window-List-Page
++ I WindowList (CurrentPage) "$*" Function Window-Focus-DefaultDesk-Raised CurrentAtEnd CurrentDesk NoGeometry MaxLabelWidth 40 NoIcons NoCurrentDeskTitle 
+
+##---------------------------------------------------------------##
+### Dziedziczenie focusa przez okno przy zmianie pulpitu
+
+DestroyFunc Window-RememberFocused
+AddToFunc Window-RememberFocused
++ I None (CurrentPage, AcceptsFocus) Break
++ I Current (!Iconified, !Sticky) All (CurrentPage) State 2 False
++ I Current (!Iconified) State 2 True
+
+DestroyFunc Window-FocusRemembered
+AddToFunc Window-FocusRemembered
++ I None (CurrentPage, AcceptsFocus) Break
++ I Current (Focused, Sticky, !CirculateHit) Break
++ I Next (CurrentPage, State 2) Focus
++ I None (CurrentPage, Focused) Prev (CurrentPage, !Iconified) Focus
+
+DestroyFunc Window-Focus-CurrentDesk
+AddToFunc Window-Focus-CurrentDesk
++ I Iconify False
++ I MoveToDesk
++ I MoveToPage $[page.nx] $[page.ny]
++ I FlipFocus
++ I Focus
+
+DestroyFunc Window-Focus-DefaultDesk
+AddToFunc Window-Focus-DefaultDesk
++ I Iconify False
++ I FlipFocus
++ I Focus
+
+DestroyFunc Window-Focus-CurrentDesk-Raised
+AddToFunc Window-Focus-CurrentDesk-Raised
++ I Iconify False
++ I MoveToDesk
++ I MoveToPage $[page.nx] $[page.ny]
++ I FlipFocus
++ I Focus
++ I Raise
+
+DestroyFunc Window-Focus-DefaultDesk-Raised
+AddToFunc Window-Focus-DefaultDesk-Raised
++ I Iconify False
++ I FlipFocus
++ I Focus
++ I Raise
+
+DestroyFunc Icon-Focus-CurrentDesk
+AddToFunc Icon-Focus-CurrentDesk
++ I Nop
++ D Window-Focus-CurrentDesk
+
+##---------------------------------------------------------------##
+### Move i Resize okna
+
+DestroyFunc ResizeFunc
+AddToFunc ResizeFunc 
++ "M" Resize 
++ "M" PlaceAgain
+
+DestroyFunc MoveFunc
+AddToFunc MoveFunc   
++ "M" Move
+
+##---------------------------------------------------------------##
+### Usprawnienie działania gajim
+
+DestroyFunc UrgencyFunc
+AddToFunc UrgencyFunc
++ I Nop
+
+DestroyFunc UrgencyDoneFunc
+AddToFunc UrgencyDoneFunc
++ I Nop
+
+##---------------------------------------------------------------##
+### Marginesy
+
+DestroyFunc EWMH-Desktop
+AddToFunc EWMH-Desktop
++ I SetEnv EWMH-BS-Desktop-Left		$0
++ I SetEnv EWMH-BS-Desktop-Right	$1
++ I SetEnv EWMH-BS-Desktop-Top		$2
++ I SetEnv EWMH-BS-Desktop-Bottom	$3
++ I EWMH-Set-Desktop
++ I SetEnv EWMH-BS-Panel-Left	$[EWMH-BS-Desktop-Left]
++ I SetEnv EWMH-BS-Panel-Right	$[EWMH-BS-Desktop-Right]
++ I SetEnv EWMH-BS-Panel-Top	$[EWMH-BS-Desktop-Top]
++ I SetEnv EWMH-BS-Panel-Bottom	$[EWMH-BS-Desktop-Bottom]
+
+DestroyFunc EWMH-Set-Desktop
+AddToFunc EWMH-Set-Desktop
++ I EWMHBaseStruts $[EWMH-BS-Desktop-Left] $[EWMH-BS-Desktop-Right] $[EWMH-BS-Desktop-Top] $[EWMH-BS-Desktop-Bottom]
+
+DestroyFunc EWMH-Panel
+AddToFunc EWMH-Panel
++ I SetEnv EWMH-BS-Panel-Left	$0
++ I SetEnv EWMH-BS-Panel-Right	$1
++ I SetEnv EWMH-BS-Panel-Top	$2
++ I SetEnv EWMH-BS-Panel-Bottom	$3
++ I EWMH-Set-Panel
+
+DestroyFunc EWMH-Panel-Left
+AddToFunc EWMH-Panel-Left
++ I SetEnv EWMH-BS-Panel-Left $0
++ I EWMH-Set-Panel
+
+DestroyFunc EWMH-Panel-Right
+AddToFunc EWMH-Panel-Right
++ I SetEnv EWMH-BS-Panel-Right $0
++ I EWMH-Set-Panel
+
+DestroyFunc EWMH-Panel-Top
+AddToFunc EWMH-Panel-Top
++ I SetEnv EWMH-BS-Panel-Top $0
++ I EWMH-Set-Panel
+
+DestroyFunc EWMH-Panel-Bottom
+AddToFunc EWMH-Panel-Bottom
++ I SetEnv EWMH-BS-Panel-Bottom $0
++ I EWMH-Set-Panel
+
+DestroyFunc EWMH-Set-Panel
+AddToFunc EWMH-Set-Panel
++ I EWMHBaseStruts $[EWMH-BS-Panel-Left] $[EWMH-BS-Panel-Right] $[EWMH-BS-Panel-Top] $[EWMH-BS-Panel-Bottom]
+
+DestroyFunc EWMH-Toggle
+AddToFunc EWMH-Toggle
++ I Interface_Hide $0 $1 $2 $3
+
+EWMH-Desktop 0 0 1 0
+
+##add by doom
+AddToFunc autohide
++ I ThisWindow ($0) Deschedule $[w.id]
++ I ThisWindow ($0) ThisWindow (shaded) AutohideShow $1 $3
++ I TestRc (!Match) All ($0, !shaded) autohide_hide $2 $3
+
+AddToFunc AutohideShow
++ I Schedule $0 -$[w.id] WindowShade $1 off
++ I Schedule $0 -$[w.id] Raise
++ I Schedule $0 -$[w.id] Deschedule $[w.id]
+
+AddToFunc autohide_hide
++ I Schedule $0 $[w.id] WindowShade $1 on
++ I Schedule $0 $[w.id] Deschedule $[w.id]
+
+AddToFunc StartFunction
++ I Module FvwmAuto 1 -menter enter_handler
+
+DestroyFunc enter_handler
+AddToFunc enter_handler
++ I autohide Panel       250 500 S
++ I autohide MacMenu     250 500 N

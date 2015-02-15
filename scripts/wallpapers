@@ -1,0 +1,3 @@
+#!/bin/bash
+echo $1
+habak -ms $1 && rm ~/.fvwm/wallpapers/* && cp $1 ~/.fvwm/wallpapers/

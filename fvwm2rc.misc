@@ -1,0 +1,36 @@
+###################################################################
+##---------------------------------------------------------------##
+### Inne							###
+##---------------------------------------------------------------##
+###################################################################
+
+##---------------------------------------------------------------##
+### FvwmEvent
+
+*FvwmEvent: new_page Window-FocusRemembered
+*FvwmEvent: focus_change Window-RememberFocused 
+*FvwmEvent: destroy_window Window-FocusRemembered
+*FvwmEvent: deiconify DeThumbnail
+
+##---------------------------------------------------------------##
+### FvwmProxy
+
+DestroyModuleConfig FvwmProxy: *
+*FvwmProxy: Colorset 2
+#*FvwmProxy: Font "Shadow=0 se:xft:Lat2-Terminus16:encoding=iso10646-1:size=9"
+*FvwmProxy: Font "Shadow=0 se:xft:WenQuanYi Micro Hei:encoding=iso10646-1:size=9"
+*FvwmProxy: ProxyMove true
+
+##---------------------------------------------------------------##
+### FvwmIdent
+
+DestroyModuleConfig FvwmIdent: *
+*FvwmIdent: Colorset 2
+*FvwmProxy: Font "Shadow=0 se:xft:WenQuanYi Micro Hei:encoding=iso10646-1:size=9"
+
+DestroyModuleConfig FvwmAnimate: *
+*FvwmAnimate: Color black
+*FvwmAnimate: Effect frame
+*FvwmAnimate: Delay 10
+*FvwmAnimate: Iterations 100
+*FvwmAnimate: Width 1

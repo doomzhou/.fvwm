@@ -1,0 +1,366 @@
+###################################################################
+##---------------------------------------------------------------##
+#### Ustawienia menu						###
+##---------------------------------------------------------------##
+###################################################################
+
+MenuStyle * Hilight3DThin, PopupOffset +0 100, PopupDelay 100
+#MenuStyle * Font "Shadow=0 se:xft:Lat2-Terminus16:encoding=iso10646-1:size=9"
+MenuStyle * Font "Shadow=0 se:xft:WenQuanYi Micro Hei:encoding=iso10646-1:size=9"
+MenuStyle * MenuColorset 2, HilightBack, ActiveColorset 7 
+MenuStyle * BorderWidth 1, TitleUnderlines2, SeparatorsLong, Animation, TrianglesSolid
+MenuStyle * ItemFormat "%.2|%.5i%.5l%.5i%2.3>%2|"
+MenuStyle * AutomaticHotKeys
+
+#### menu
+DestroyMenu MenuFvwmWindowOps
+AddToMenu MenuFvwmWindowOps
++	"Identify"			Pick Module FvwmIdent
++	"Pick Stick"			Pick Stick
++	"Close"				Close
+
+###################################################################
+##---------------------------------------------------------------##
+### Menu						   	###
+##---------------------------------------------------------------##
+###################################################################
+
+DestroyMenu MenuFvwmRoot
+AddToMenu MenuFvwmRoot	
++	"Accesories"						Popup MenuAccesories
++   	"Internet"						Popup MenuInternet
++   	"Multimedia"						Popup MenuMultimedia
++	"Games"							Popup MenuGames
++	"Programming"						Popup MenuProgramming
++   	"System"						Popup MenuSystem
++   	"Office"						Popup MenuOffice
++   	""							Nop
++   	"Exit FVWM"						Exit
+
+##---------------------------------------------------------------##
+
+DestroyMenu MenuAccesories
+AddToMenu MenuAccesories
++	"= Accesories ="
+#+  "Rox"%$[fvwm_icon_path]/rox.png%			Exec exec rox
+#+  "Xfe"%$[fvwm_icon_path]/rox.png%			Exec exec xfe
+#+	"GCalcTool"%$[fvwm_icon_path]/calc.png%			Exec exec gcalctool
+#+	"Seahorse"%$[fvwm_icon_path]/keys.png%			Exec exec seahorse
+#+	"Printing"%$[fvwm_icon_path]/printer.png%		Exec exec /usr/bin/system-config-printer-applet --no-tray-icon
+#+	"File-Roller"%$[fvwm_icon_path]/file-roller.png%	Exec exec file-roller
+#+	"Screen Console"%$[fvwm_icon_path]/gedit.png%		Exec exec urxvt -g 153x44+259+160 -name work -tr +sb -rv -fg white
+#+	"Guake"%$[fvwm_icon_path]/keys.png%			Exec exec guake		# by zlf:i have change default hotkey F10
++	"GVim"%$[fvwm_icon_path]/vim.png%			Exec exec gvim
++	""							Nop
++	"Gedit"%$[fvwm_icon_path]/gedit.png%			Exec exec gedit
+DestroyMenu MenuSystem
+AddToMenu MenuSystem
++   "= System ="						Title Setup
++   "&Home"%$[fvwm_icon_path]/rox.png%			Exec exec konqueror ~
++   "&Terminal"%$[fvwm_icon_path]/konsole.png%		Exec exec xterm
++   "VirtualBox"%$[fvwm_icon_path]/virtualbox.png%		Exec exec virtualbox
++	"Wine Configuration"%$[fvwm_icon_path]/wine.png%	Exec exec winecfg
++	"Browse C:"%$[fvwm_icon_path]/wine.png%			Exec exec konqueror ~/.wine/drive_c
++   ""							Nop
+#+  "Screenshot"%$[fvwm_icon_path]/screenshot.png%		Exec exec $[fvwm_script_path]/screenshot.sh
+#+  "FontViewer"%$[fvwm_icon_path]/rox.png%			Exec exec gnome-font-viewer
+#+	"Gparted"%$[fvwm_icon_path]/gparted.png%		Exec exec gksu gparted
+
+##---------------------------------------------------------------##
+
+DestroyMenu MenuOffice
+AddToMenu MenuOffice
++   "     = Biuro =     "					Title Biuro
++	"Libreoffice"%$[fvwm_icon_path]/ooffice.png%		Exec exec libreoffice
+#+   "Writer"%$[fvwm_icon_path]/oowriter.png%		Exec exec oowriter
+#+   "Calc"%$[fvwm_icon_path]/oocalc.png%			Exec exec oocalc
+#+	"Impress"%$[fvwm_icon_path]/ooimpress.png%		Exec exec ooimpress
+#+	"Draws"%$[fvwm_icon_path]/oodraw.png%			Exec exec oodraw
+
+##---------------------------------------------------------------##
+
+DestroyMenu MenuInternet
+AddToMenu MenuInternet
++   "= Internet ="						Title Internet
++	"chrome"%$[fvwm_icon_path]/google-chrome.png%		Exec exec google-chrome-stable
++	"xnviewmp"%$[fvwm_icon_path]/pidgin.png%		Exec exec xnviewmp
++	"okular"%$[fvwm_icon_path]/pidgin.png%			    Exec exec okular
++   "Firefox"%$[fvwm_icon_path]/firefox.png%		Exec exec firefox
++   "Pidgin"%$[fvwm_icon_path]/pidgin.png%			Exec exec pidgin
+#+	"Wicd"%$[fvwm_icon_path]/network.png%			Exec exec wicd-client
++   ""							Nop
++  	"Xchat"%$[fvwm_icon_path]/xchat.png%			Exec exec xchat
+#+ 	"Skype"%$[fvwm_icon_path]/skype.png%			Exec exec skype
++  	""							Nop
+#+	"aMule"%$[fvwm_icon_path]/amule.png%			Exec exec amule
+#+	"DC++"%$[fvwm_icon_path]/dc.png%				Exec exec linuxdcpp
+#+	"Transmission"%$[fvwm_icon_path]/download.png%		Exec exec transmission
+#+	"Frostwire"%$[fvwm_icon_path]/limewire.png%		Exec exec /usr/bin/frostwire
+#+	"Nicotine"%$[fvwm_icon_path]/nicotine_blue.png%		Exec exec nicotine
+#+   	""							Nop
+#+   "DSL [Connect]"%$[fvwm_icon_path]/icon.png%		Exec exec /opt/ubudsl/bin/Applet
+#+   "DSL [Configure]"%$[fvwm_icon_path]/icon.png%		Exec exec /opt/ubudsl/ubudsl
+#+   "Remote desktops"%$[fvwm_icon_path]/d4x.png%		Exec exec vinagre
+#+   "TsClient"%$[fvwm_icon_path]/d4x.png% 			Exec exec tsclient
+#+   "Sun Java 6 Web Start"%$[fvwm_icon_path]/java.png%	Exec exec /usr/lib/jvm/java-6-sun-1.6.0.06/bin/javaws
+#+	"Firestarter"%$[fvwm_icon_path]/firestarter.png%		Exec exec gksu /usr/sbin/firestarter
+
+
+##---------------------------------------------------------------##
+
+DestroyMenu MenuMultimedia
+AddToMenu MenuMultimedia
++   "= Multimedia ="					Title Multimedia
+#+   "Sonata"%$[fvwm_icon_path]/rhythmbox.png%		Exec exec sonata
+#+	"Sound Recorder"%$[fvwm_icon_path]/sound1.png%     	Exec exec gnome-sound-recorder
++	"Mixer"%$[fvwm_icon_path]/v4.png%			Exec exec $[fvwm_terminal] -e alsamixer
+#+   "Ex Falso"%$[fvwm_icon_path]/exfalso.png%		Exec exec exfalso
+#+	"NCMPC"%$[fvwm_icon_path]/bmp.png%			Exec exec $[fvwm_ncmpc] -e ncmpc
++	""							Nop
++   "MPlayer"%$[fvwm_icon_path]/mplayer.png%		Exec exec mplayer
+#+   "Totem"%$[fvwm_icon_path]/totem.png%			Exec exec totem
++   ""							Nop
++   "The &Gimp"%$[fvwm_icon_path]/gimp.png%			Exec exec gimp
+#+   "Picasa"%$[fvwm_icon_path]/picasa.png%			Exec exec picasa
+#+   "F-spot"%$[fvwm_icon_path]/gphoto.png%			Exec exec f-spot
+#+   "Eog"%$[fvwm_icon_path]/gqview.png%			Exec exec eog
+#+   "Xsane"%$[fvwm_icon_path]/xsane.png%			Exec exec xsane
+
+##---------------------------------------------------------------##
+
+DestroyMenu MenuProgramming
+AddToMenu MenuProgramming
+#+	"= Programming ="
+#+	"Anjuta"%$[fvwm_icon_path]/"keys.png"% 			Exec exec anjuta
+#+	"Asystent Kdevelop"%$[fvwm_icon_path]/"kdevelop.png"% 	Exec exec kdevassistant
+#+	"Kdevelop: C/C++"%$[fvwm_icon_path]/"kdevelop.png"% 	Exec exec kdevelop --profile CandCppIDE
+#+	"Kdevelop: KDE/C++"%$[fvwm_icon_path]/"kdevelop.png"% 	Exec exec kdevelop --profile KDECppIDE
+#+	"Kdevelop: Ruby"%$[fvwm_icon_path]/"kdevelop.png"% 	Exec exec kdevelop --profile RubyIDE
+#+	"Kdevelop: Scripts"%$[fvwm_icon_path]/"kdevelop.png"% 	Exec exec kdevelop --profile ScriptingLanguageIDE
+#+	"Kdevelop: MultiLang"%$[fvwm_icon_path]/"kdevelop.png"% Exec exec kdevelop
+#+	""							Nop		
++	"QT Designer 4"%$[fvwm_icon_path]/"kdevelop.png"%	Exec exec /usr/bin/designer-qt4
++	"Qt 4 Assistant"%$[fvwm_icon_path]/"kdevelop.png"% 	Exec exec /usr/bin/assistant-qt4
++	"Lingwista Qt 4"%$[fvwm_icon_path]/"linguist.png"% 	Exec exec /usr/bin/linguist-qt4
+#+	""							Nop
+#+	"Free Pascal IDE"%$[fvwm_icon_path]/"kdevelop.png"% 	Exec exec gnome-terminal -e fp
+#+	"Kompare"%$[fvwm_icon_path]/"kompare.png"% 		Exec exec kompare
+#+	"Cervisia"%$[fvwm_icon_path]/"cervisia.png"% 		Exec exec cervisia
+#+	"Bluefish Editor"%$[fvwm_icon_path]/"bluefish.png"% 	Exec exec bluefish
+#+	"Quanta Plus"%$[fvwm_icon_path]/"quanta.png"% 		Exec exec quanta
+#+	"KImageMapEditor"%$[fvwm_icon_path]/"kimagemapeditor.png"% Exec exec kimagemapeditor
+
+##---------------------------------------------------------------##
+
+
+DestroyMenu MenuGames
+AddToMenu MenuGames
++	"= Games ="
++	""							Nop
++	"Supertux2"%$[fvwm_icon_path]/"supertux2.png"%     		Exec exec supertux2
++	""							Nop
+#+	"Counter-Strike 1.6"%$[fvwm_icon_path]/cs.png%   	Exec exec wine "C:\\Program Files\\Counter-Strike 1.6\\hl.exe -nomaster -game cstrike
+
+##---------------------------------------------------------------##
+
+DestroyMenu Menusyscontrol
+AddToMenu Menusyscontrol
++   "= System controles ="					Title System config
++	"Conky"%$[fvwm_icon_path]/conky.png%			Exec exec conky
++   "Refresh"%$[fvwm_icon_path]/refresh.png%		Refresh
++   "Kill"%$[fvwm_icon_path]/kill.png%			Pick Destroy
++   "Restart"%$[fvwm_icon_path]/restart.png%		Restart
+
+##---------------------------------------------------------------##
+
+DestroyMenu MenuFvwmConfig
+AddToMenu MenuFvwmConfig
++   "FVWM settings"%$[fvwm_icon_path]/gedit.png%		Popup MenuFVWMconfiguration
++	"Programs settings"%$[fvwm_icon_path]/gedit.png%	Popup MenuProgramsConfiguration
++  	"GTK-chtheme"%$[fvwm_icon_path]/desktop.png%		Exec exec gtk-chtheme
++ 	MissingSubmenuFunction WallpaperBrowser
++   "Wallpapers"%$[fvwm_icon_path]/folder.png%		Popup $[fvwm_wallpaper_dir]/
++	""							nop
++   "System controles"					Popup Menusyscontrol
+
+##---------------------------------------------------------------##
+
+DestroyMenu MenuFVWMconfiguration
+AddToMenu MenuFVWMconfiguration
++   "= FVWM settings ="					Title Preferences
++   "Edit config"%$[fvwm_icon_path]/gedit.png%		Exec exec $[fvwm_editor] $[fvwm_config_path]/config
++   "Edit bind-keys"%$[fvwm_icon_path]/gedit.png%		Exec exec $[fvwm_editor] $[fvwm_config_path]/fvwm2rc.binds-keys
++   "Edit bind-mouse"%$[fvwm_icon_path]/gedit.png%		Exec exec $[fvwm_editor] $[fvwm_config_path]/fvwm2rc.binds-mouse
++   "Edit colorsets"%$[fvwm_icon_path]/gedit.png%		Exec exec $[fvwm_editor] $[fvwm_config_path]/fvwm2rc.colorsets
++   "Edit cursors"%$[fvwm_icon_path]/gedit.png%		Exec exec $[fvwm_editor] $[fvwm_config_path]/fvwm2rc.cursors
++   "Edit functions"%$[fvwm_icon_path]/gedit.png%		Exec exec $[fvwm_editor] $[fvwm_config_path]/fvwm2rc.functions
++   "Edit iconman"%$[fvwm_icon_path]/gedit.png%		Exec exec $[fvwm_editor] $[fvwm_config_path]/fvwm2rc.iconman
++   "Edit menu"%$[fvwm_icon_path]/gedit.png%		Exec exec $[fvwm_editor] $[fvwm_config_path]/fvwm2rc.menu
++   "Edit macmenu"%$[fvwm_icon_path]/gedit.png%		Exec exec $[fvwm_editor] $[fvwm_config_path]/fvwm2rc.macmenu
++   "Edit misc"%$[fvwm_icon_path]/gedit.png%		Exec exec $[fvwm_editor] $[fvwm_config_path]/fvwm2rc.misc
++   "Edit panel"%$[fvwm_icon_path]/gedit.png%		Exec exec $[fvwm_editor] $[fvwm_config_path]/fvwm2rc.panel
++   "Edit settings"%$[fvwm_icon_path]/gedit.png%		Exec exec $[fvwm_editor] $[fvwm_config_path]/fvwm2rc.settings
++   "Edit style"%$[fvwm_icon_path]/gedit.png%		Exec exec $[fvwm_editor] $[fvwm_config_path]/fvwm2rc.style
++   "Edit thumbnails"%$[fvwm_icon_path]/gedit.png%		Exec exec $[fvwm_editor] $[fvwm_config_path]/fvwm2rc.thumbnails
++   "Edit wmdecor"%$[fvwm_icon_path]/gedit.png%		Exec exec $[fvwm_editor] $[fvwm_config_path]/fvwm2rc.wmdecor
++   	"Edit xinitrc"%$[fvwm_icon_path]/gedit.png%		Exec exec $[fvwm_editor] ~/.xinitrc
+
+##---------------------------------------------------------------##
+
+DestroyMenu MenuProgramsConfiguration
+AddToMenu MenuProgramsConfiguration
++   "= Programs settings ="					Title Preferences
++   "Edit conkyrc"%$[fvwm_icon_path]/gedit.png%		Exec exec $[fvwm_editor] ~/.conkyrc
++   "Edit gtkrc-2.0"%$[fvwm_icon_path]/gedit.png%		Exec exec $[fvwm_editor] ~/.gtkrc-2.0
++   "Edit gtkrc.mine"%$[fvwm_icon_path]/gedit.png%		Exec exec $[fvwm_editor] ~/.gtkrc.mine
++   "Edit mpdconf"%$[fvwm_icon_path]/gedit.png%		Exec exec $[fvwm_editor] ~/.mpdconf
++   "Edit bashrc"%$[fvwm_icon_path]/gedit.png%		Exec exec $[fvwm_editor] ~/.bashrc
+
+##---------------------------------------------------------------##
+
+DestroyMenu MenuPlaces
+AddToMenu MenuPlaces
++	"= Places ="
++   "Home"%$[fvwm_icon_path]/gedit.png%			Exec exec konqueror ~/
++   "VIdeo"%$[fvwm_icon_path]/gedit.png%			Exec exec konqueror ~/Media/Filmy/
++   "Audio"%$[fvwm_icon_path]/gedit.png%			Exec exec konqueror ~/Media/Audio/
++   "Pictures and photos"%$[fvwm_icon_path]/gedit.png%	Exec exec konqueror ~/Media/Pictures\ and\ photos/
++   "University"%$[fvwm_icon_path]/gedit.png%		Exec exec konqueror ~/Politechnika
++	"Fvwm Direcotry"%$[fvwm_icon_path]/gedit.png%		Exec exec konqueror ~/.fvwm
+
+##---------------------------------------------------------------##
+#by zlf
+DestroyMenu FvwmRMenu
+AddToMenu FvwmRMenu
++	"= RMenu by zlf ="
++   	"Transset0.9"%$[fvwm_icon_path]/keys.png%			Popup FvwmtranMenu
++   	"Restart"%$[fvwm_icon_path]/keys.png%				Restart
++       "scrot"%$[fvwm_icon_path]/keys.png%                             Exec exec scrot -s
++       "zlfsoft"%$[fvwm_icon_path]/keys.png%                           Popup Fvwmzlfsoft
+
+##---------------------------------------------------------------##
+DestroyMenu Fvwmzlfsoft
+AddToMenu Fvwmzlfsoft
++   	"google-earth"%$[fvwm_icon_path]/keys.png%			Exec exec google-earth
++   	"okular"%$[fvwm_icon_path]/keys.png%				Exec exec okular 
+
+
+##---------------------------------------------------------------##
+DestroyMenu FvwmtranMenu
+AddToMenu FvwmtranMenu
++	"= tranMenu by zlf ="
++   	"Transset0.9"%$[fvwm_icon_path]/keys.png%			Exec exec transset-df 0.9
++   	"Transset0.8"%$[fvwm_icon_path]/keys.png%			Exec exec transset-df 0.8
++   	"Transset0.7"%$[fvwm_icon_path]/keys.png%			Exec exec transset-df 0.7
+
+##---------------------------------------------------------------##
+
+###################################################################
+##---------------------------------------------------------------##
+### Menu okna							###
+##---------------------------------------------------------------##		
+###################################################################
+
+
+DestroyMenu MenuFvwmWindowOps
+AddToMenu MenuFvwmWindowOps
++   	"Resize"						Pick Resize
++   	"Pick Stick"						Pick Stick
++   	"Refresh"						Pick RefreshWindow
++   	"Identify" 						Pick Module FvwmIdent
++   	"Close"							Close
++   	"Destroy"						Destroy
+
+##---------------------------------------------------------------##
+
+DestroyFunc Exit
+AddToFunc Exit
++ I DestroyModuleConfig Exit: *
++ I *Exit: Font "Shadow=1 b bl r br r :xft:Verdona:pixelsize=10:minspace=True" 
++ I *Exit: ButtonFont "xft:Verdona:bold:pixelsize=10:minspace=True" 
++ I *Exit: Colorset 33
++ I *Exit: ItemColorset 34
++ I *Exit: Line center
++ I *Exit: Text "Would you like close FVWM?"
++ I *Exit: Line center
++ I *Exit: Line center
++ I *Exit: Button quit "   Yes   " ^M
++ I *Exit: Command Exit2
++ I *Exit: Button quit "   No   " ^[
++ I *Exit: Command Nop
++ I *Exit: Line center
++ I Module FvwmForm Exit
+
+##---------------------------------------------------------------##
+
+DestroyFunc Exit2
+AddToFunc Exit2
++ I DestroyModuleConfig Exit2: *
++ I *Exit2: Font "Shadow=1 b bl r br r :xft:Verdona:pixelsize=10:minspace=True" 
++ I *Exit2: ButtonFont "xft:Verdona:bold:pixelsize=10:minspace=True" 
++ I *Exit2: Colorset 33
++ I *Exit2: ItemColorset 34
++ I *Exit2: Line center
++ I *Exit2: Text "Choose action"
++ I *Exit2: Line center
++ I *Exit2: Line center
++ I *Exit2: Button quit "   Turn off   " ^N
++ I *Exit2: Command exec sudo halt
++ I *Exit2: Command Quit
++ I *Exit2: Button quit "   Restart   " ^O
++ I *Exit2: Command exec sudo reboot
++ I *Exit2: Command Quit
++ I *Exit2: Button quit "   Close FVWM   " ^O
++ I *Exit2: Command Quit
++ I *Exit2: Line center
++ I Module FvwmForm Exit2
+
+##---------------------------------------------------------------##
+
+DestroyMenu sysup
+AddToMenu sysup Updates title
++ DynamicPopupAction Function Getsysup
+
+DestroyFunc SysupUpdateAll
+AddToFunc SysupUpdateAll
++ I Exec exec $0 -e sudo /usr/bin/emerge -uD world
++ I Exec exec $[fvwm_scripts_path]/sysup clear-cache
+
+DestroyFunc SysupUpdate
+AddToFunc SysupUpdate
++ I Exec exec $0 -e sudo /usr/bin/emerge "=$1"
++ I Exec exec $[fvwm_scripts_path]/sysup remove $1 
+
+DestroyFunc Getsysup
+AddToFunc Getsysup
++ I DestroyMenu recreate sysup
++ I AddToMenu sysup Updates title
++ I Piperead 'echo "`$[fvwm_scripts_path]/sysup`"'
+
+
+##---------------------------------------------------------------##
+
+###################################################################
+##---------------------------------------------------------------##
+###                   Przeglądarka folderów                     ###
+##---------------------------------------------------------------##
+###################################################################
+
+##---------------------------------------------------------------##
+
+#### Przeglądarka folderów z tapetami
+DestroyFunc WallpaperBrowser
+AddToFunc WallpaperBrowser
++ I PipeRead 'test ! -d "$0/.thumbs" && mkdir "$0/.thumbs"; \
+    for i in "$0/"*; do \
+        test -f "$0/.thumbs/${i##*/}" \
+            -a "${i}" -ot "$0/.thumbs/${i##*/}" || { \
+                convert -quality 0 -scale 24 "${i}" "png:$0/.thumbs/${i##*/}" 2>/dev/null \
+                    || continue; \
+            }; \
+    done; \
+    fvwm-menu-directory --icon-title icons/browse.png --icon-file __PIXMAP__ \
+    --icon-dir icons/browse.png --dir $0 --exec-file "^$[fvwm_script_path]/wallpapers" \
+    --exec-t="^eog *" | sed -e "s#FuncFvwmMenuDirectory#WallpaperBrowser#g" \
+    -e "s#__PIXMAP__\\(.*\\)\\"\\(.*/\\)\\(.*\\)\\"#\\2.thumbs/\\3\\1\\2\\3#g"'
+

@@ -1,0 +1,45 @@
+###################################################################
+##---------------------------------------------------------------##
+### Style modułów						###
+##---------------------------------------------------------------##
+###################################################################
+
+Style FvwmForm          NoTitle, Sticky, WindowListSkip, NeverFocus
+Style FvwmPager         NoTitle, Sticky, WindowListSkip, StaysOnBottom, NeverFocus, BorderWidth 1, HandleWidth 1
+Style Panel             NoTitle, Sticky, WindowListSkip, StaysOnBottom, NeverFocus, BorderWidth 0, HandleWidth 0, Layer 8
+Style MacMenu           NoTitle, Sticky, WindowListSkip, StaysOnBottom, NeverFocus, BorderWidth 0, HandleWidth 0, Layer 8
+Style FvwmIconMan       NoTitle, Sticky, WindowListSkip, BorderWidth 0, HandleWidth 0
+Style BatteryPopup      NoTitle, Sticky, WindowListSkip, StaysOnBottom, NeverFocus, BorderWidth 1, HandleWidth 1, Layer 8
+Style MyTray            NoTitle, Sticky, NoHandles, WindowListSkip, HandleWidth 0, BorderWidth 0, NoTitle
+
+###################################################################
+##---------------------------------------------------------------##
+### Style aplikacji						###
+##---------------------------------------------------------------##
+###################################################################
+
+Style *                 CenterPlacement, MiniIcon min/rox.png 
+Style cairo-clock       Notitle, Sticky, WindowListSkip, StaysOnBottom, NeverFocus, BorderWidth 0, HandleWidth 0
+Style okular            MiniIcon min/ekg2.png, BorderWidth 1
+#Style MPlayer           CenterPlacement, NoTitle, NeverFocus, MiniIcon icons/gimp.png
+###by zlf
+Style TM.exe            Notitle
+Style MPlayer           CenterPlacement, NeverFocus, MiniIcon icons/gimp.png
+Style Gecko             CenterPlacement, MiniIcon min/firefox.png, BorderWidth 1
+Style wfica.sh          CenterPlacement, MiniIcon min/firefox.png, BorderWidth 1
+Style wfica             CenterPlacement, MiniIcon min/firefox.png, BorderWidth 1
+Style urxvt             CenterPlacement, MiniIcon min/terminal.png, BorderWidth 1
+Style mutt              CenterPlacement, MiniIcon min/mutt.png, BorderWidth 1
+Style pidgin            Notitle, MiniIcon min/ekg2.png, BorderWidth 1
+Style feh               CenterPlacement, MiniIcon min/feh.png, BorderWidth 1
+Style ekg2              CenterPlacement, MiniIcon min/ekg2.png, BorderWidth 1
+Style ncmpc		        CenterPlacement, MiniIcon min/phones.png, BorderWidth 1
+Style quodlibet         CenterPlacement, MiniIcon min/rox.png, BorderWidth 1
+Style xfe	            CenterPlacement, MiniIcon min/rox.png, BorderWidth 1
+Style trayer            Notitle, Sticky, WindowListSkip, StaysOnBottom, NeverFocus, BorderWidth 0, HandleWidth 0
+Style tail		        Notitle, Sticky, WindowListSkip, StaysOnBottom, NeverFocus, BorderWidth 0, HandleWidth 0
+Style work	        	Notitle, Sticky, WindowListSkip, StaysOnBottom, NeverFocus, BorderWidth 0, HandleWidth 0
+Style gimp              MiniIcon min/gimp.png
+Style Untitled          CenterPlacement, BorderWidth 1
+Style Wyszukiwanie  	NoTitle, Sticky, NeverFocus, BorderWidth 1
+Style * EwmhMiniIconOverride

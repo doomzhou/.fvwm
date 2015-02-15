@@ -1,0 +1,28 @@
+DestroyModuleConfig MacMenu: *
+*MacMenu: Pixmap macosx/dock_center2.png
+*MacMenu: Colorset 100
+*MacMenu: Rows 22
+*MacMenu: Columns 1366
+*MacMenu: Frame 0
+*MacMenu: Font "Shadow=1 se:xft:Lat2-Terminus16:encoding=iso10646-1:size=9"
+#*MacMenu: Font "Shadow=1 se:xft:WenQuanYi Micro Hei:encoding=iso10646-1:size=9"
+#*MacMenu: (46x22, Padding 0, Icon macosx/main.png)
+*MacMenu: (10x22)
+*MacMenu: (45x22, Padding 0, Title(Side) "Fvwm", ActionOnPress, Action(Mouse 1) 'Menu MenuFvwmRoot Rectangle +$left+22 0 0m' )
+*MacMenu: (65x22, Padding 0, Title(Side) "Settings", ActionOnPress, Action(Mouse 1) 'Menu MenuFvwmConfig Rectangle +$left+22 0 0m' )
+*MacMenu: (85x22, Padding 0, Title(Side) "Places", ActionOnPress, Action(Mouse 1) 'Menu MenuPlaces Rectangle +$left+22 0 0m' )
+*MacMenu: (670x22)
+*MacMenu: (90x22, Swallow "loadavg" 'Module FvwmScript $[fvwm_script_path]/loadavg')
+*MacMenu: (40x22, Swallow (Respawn) "MemUse" 'Module FvwmScript $[fvwm_script_path]/MemUse')
+*MacMenu: (80x22, Swallow (Respawn) "MemLibre" 'Module FvwmScript $[fvwm_script_path]/MemLibre')
+*MacMenu: (50x22, Swallow "Wifi" 'Module FvwmScript $[fvwm_script_path]/Wifi')
+*MacMenu: (60x22, Swallow "t" 'Module FvwmScript $[fvwm_script_path]/t')
+*MacMenu: (24x22, Swallow "Battery" 'Module FvwmScript $[fvwm_script_path]/Battery')
+*MacMenu: (27x22, Padding 0, Icon macosx/rew.png, Action(Mouse 1) 'Exec exec audacious -r') 
+*MacMenu: (25x22, Padding 0, Icon macosx/stop.png, Action(Mouse 1) "Exec exec killall -r '(mplayer|loop.sh)'")
+*MacMenu: (25x22, Padding 0, Icon macosx/play.png, Action(Mouse 1) 'Exec exec /home/doom/study/songs/loop.sh')
+*MacMenu: (25x22, Padding 0, Icon macosx/playpause.png, Action(Mouse 1) 'Exec exec killall mplayer') 
+*MacMenu: (27x22, Padding 0, Icon macosx/fwd.png, Action(Mouse 1) 'Exec exec /home/doom/study/songs/loop.sh') 
+*MacMenu: (10x22)
+*MacMenu: (120x22, Swallow (Respawn) "Clock" 'Module FvwmScript $[fvwm_script_path]/Clock')
+*MacMenu: (26x22, Padding 0, Icon macosx/main.png, ActionOnPress, Action(Mouse 1) Exec exec transset-df 0.8)

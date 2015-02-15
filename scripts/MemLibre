@@ -1,0 +1,50 @@
+### 
+# Memoire libre et utilisée en Mo
+# By lucky
+###
+
+###by zlf i change the Colorset 5--->100 three point 
+WindowTitle {FvwmMeminfo}
+WindowSize 50 22		# Taille
+WindowPosition 0 0		# Position
+Colorset 100
+Font		"Shadow=1 se:xft:HandelGothic BT:encoding=iso10646-1:size=7"
+
+Init
+ Begin
+    Set $meml=(GetOutput {~/.fvwm/bin/MEM |cut -d ' ' -f2} 1 -1) MB
+    ChangeTitle 2 $meml
+  Set $libre=L:
+    ChangeTitle 1 $libre
+ End
+
+PeriodicTasks
+Begin
+    If (RemainderOfDiv (GetTime) 30)==0 Then
+    Begin
+        Set $meml=(GetOutput {~/.fvwm/bin/MEM |cut -d ' ' -f2} 1 -1) MB
+        ChangeTitle 2 $meml
+    End
+End
+
+Widget 1
+Property
+ Size 10 22
+ Position 0 0
+ Colorset 100
+ Font		"Shadow=1 se:xft:HandelGothic BT:encoding=iso10646-1:size=7"
+ Flags Left
+ Type ItemDraw
+ Title {OK}
+End
+
+Widget 2
+Property
+ Size 40 22
+ Position 12 0
+ Colorset 100
+ Font		"Shadow=1 se:xft:HandelGothic BT:encoding=iso10646-1:size=7"
+ Flags Left
+ Type ItemDraw
+ Title {OK}
+End 

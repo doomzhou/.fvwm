@@ -1,0 +1,19 @@
+###################################################################
+##---------------------------------------------------------------##
+### Kursory							###
+##---------------------------------------------------------------##
+###################################################################
+
+CursorStyle root left_ptr
+CursorStyle default left_ptr
+CursorStyle position left_ptr
+CursorStyle sys left_ptr
+CursorStyle menu left_ptr
+CursorStyle title left_ptr
+CursorStyle resize fleur
+CursorStyle stroke cross
+CursorStyle select draped_box
+
+##---------------------------------------------------------------##
+#add by doom
+#Exec xmodmap	-e	"pointer = 3 2 1 4 5"

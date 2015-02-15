@@ -1,0 +1,78 @@
+###################################################################
+##---------------------------------------------------------------##
+### Bindowanie klawiszy						###
+##---------------------------------------------------------------##
+###################################################################
+#Key    Tab     A    M   -->alt + Tab
+#Key    Tab     A    4   -->Win + Tab
+#Key    Tab     A    MC  -->ctrl + alt + Tab
+#Key    Tab     A    C   -->ctrl + Tab
+#Key    Tab     A    S   -->Shift + Tab
+#Ke     F11     A    SCM    WindowList
+
+##---------------------------------------------------------------##
+### Różne
+
+Key     Tab          A       M       Window-List-Page
+Key     Tab          A       4       WindowList NoCurrentDeskTitle NoGeometry SortByClass NoHotkeys
+Key     R            A       M       Restart
+Key     Q            A       M       Quit
+#Key     F12          A       A       Close
+#Key 	K	     A	     C	     Exec exec rxvt -fn "xft:Monospace:pixelsize=14" -g 110x44+30+30 -name work -tr +sb -rv -bg blue 
+
+##---------------------------------------------------------------##
+### Przechodzenie między pulpitami
+
+Key     F1           A       M       GotoPage 0 0 
+Key     F2           A       M       GotoPage 1 0
+Key     F3           A       M       GotoPage 2 0
+Key     F4           A       M       GotoPage 3 0
+Key     F5           A       M       GotoPage 0 1
+Key     1            A       4       WindowShade True
+Key     2            A       4       WindowShade False
+
+##---------------------------------------------------------------##
+### Przenoszenie okien 
+
+Key     F1           A       S       MoveToPage 0 0
+Key     F2           A       S       MoveToPage 1 0
+Key     F3           A       S       MoveToPage 2 0
+Key     F4           A       S       MoveToPage 3 0
+Key     F5           A       S       MoveToPage 0 1
+
+##---------------------------------------------------------------##
+### Centrowanie okien
+
+Key     KP_Begin     A       A       Center
+
+##---------------------------------------------------------------##
+### Sterowanie kursorem myszki
+
+Key     F7           A       C       CursorMove 0p -50p
+Key     F8           A       C       CursorMove 0p 50p
+Key     F9           A       C       CursorMove -50p 0p
+Key     F10          A       C       CursorMove 50p 0p
+
+##---------------------------------------------------------------##
+### Przesuwanie okien
+#
+Key     Left         WT      S       Move w-50p w+0
+Key     Right        WT      S       Move w+50p w+0
+Key     Up           WT      S       Move w+0 w-50p
+Key     Down         WT      S       Move w+0 w+50p
+#
+##---------------------------------------------------------------##
+### Wywoływanie programów
+
+Key     L            A       4       Exec exec xscreensaver-command --lock
+Key     Escape       A       M       Exec exec $[fvwm_terminal]
+#Key     M            A       M       Exec exec $[fvwm_terminal] -e mutt
+#Key     E            A       M       Exec exec $[fvwm_terminal] -e ekg2
+Key     E            A       C       Exec exec eject
+Key     I            A       M       Exec exec FvwmCommand FvwmIdent
+Key     Escape       A       C       Exec exec echo -n mem > /dev/null
+Key     M            A       M       Maximize
+##---------------------------------------------------------------##
+### Focus-policy 
+Style * ClickToFocus
+Style * FPGrabFocus

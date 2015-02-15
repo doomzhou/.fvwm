@@ -1,0 +1,31 @@
+###################################################################
+##---------------------------------------------------------------##
+### Ustawienia desktopu						###
+##---------------------------------------------------------------##
+###################################################################
+
+DeskTopSize 4x4
+IgnoreModifiers L25
+SnapAttraction 5
+EdgeScroll 0 0
+EdgeResistance 1000 20
+EdgeThickness 1
+ClickTime 150
+MoveThreshold 3
+OpaqueMoveSize unlimited
+HideGeometryWindow Always
+BugOpts FlickeringMoveWorkaround Off
+SnapGrid 1 1
+
+ColormapFocus FollowsFocus
+
+Style * Colorset 3, HilightColorset 3
+#Style * Font "Shadow=0 se:xft:Lat2-Terminus16:encoding=iso10646-1:size=9"
+Style * Font "Shadow=0 se:xft:WenQuanYi Micro Hei:encoding=iso10646-1:size=9"
+Style * DecorateTransient
+Style * IconBox -140 42 1 -1, SloppyFocus, MouseFocusClickRaises
+Style * StickyIcon
+Style * SmartPlacement, WindowShadeSteps 20, ResizeOpaque
+Style * NoIcon, NoIconTitle
+Style * BorderWidth 1, HandleWidth 1
+Style * LeftJustified

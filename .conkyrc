@@ -59,7 +59,7 @@ ${voffset 8}${color 339900}${font caviar dreams:size=16}${time %A}${font}${voffs
 ${color FFFFFF}${voffset -30}${color FFFFFF}${font caviar dreams:size=18}${time %b}${font}${voffset -3} ${color FFFFFF}${font caviar dreams:size=20}${time %Y}${font}${color 339900}${hr}
 ${voffset 140}${font caviar dreams:size=10}${alignr}HOME${font}
 ${font caviar dreams:size=12}${color FFFFFF}${alignr}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ ZSSS temperature temperature 30} °C${font}
-${image ~/study/blog/emblem/gnu.jpg -p 57,105 -s 81x87}
+${image ~/.fvwm/images/gnu.png -p 57,105 -s 81x87}
 ${acpitemp}°C 
 ${color FFFFFF}${goto 25}${voffset 35}${cpu cpu0}%
 ${color 339900}${goto 25}CPU

@@ -24,3 +24,4 @@ DestroyModuleConfig Panel: *
 *Panel: (32x32, Icon dock/firefox.png, Action(Mouse 1) `Exec exec firefox`)
 *Panel: (32x32, Icon dock/chrome.png, Action(Mouse 1) `Exec exec google-chrome-stable`,Action(Mouse 3) `Exec exec chromium`)
 *Panel: (32x32, Icon dock/terminal.png, Action(Mouse 1) `Exec exec terminator -m`) 
+*Panel: (32x32, Icon dock/backtohome.png, Action(Mouse 1) GotoPage 0 0) 

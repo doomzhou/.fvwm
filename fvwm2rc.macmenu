@@ -25,4 +25,4 @@ DestroyModuleConfig MacMenu: *
 *MacMenu: (27x22, Padding 0, Icon macosx/fwd.png, Action(Mouse 1) 'Exec exec /home/doom/study/songs/loop.sh') 
 *MacMenu: (10x22)
 *MacMenu: (120x22, Swallow (Respawn) "Clock" 'Module FvwmScript $[fvwm_script_path]/Clock')
-*MacMenu: (26x22, Padding 0, Icon macosx/main.png, ActionOnPress, Action(Mouse 1) Exec exec transset-df 0.8)
+#*MacMenu: (26x22, Padding 0, Icon macosx/main.png, ActionOnPress, Action(Mouse 1) Exec exec transset-df 0.8)

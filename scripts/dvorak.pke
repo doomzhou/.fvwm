@@ -76,3 +76,5 @@ keysym slash = z Z
 keycode 66 = Control_L
 clear Lock
 add Control = Control_L
+!add q
+keycode 135 = Pointer_Button2

@@ -51,6 +51,8 @@ SetEnv fvwm_config_path $[FVWM_USERDIR]
 AddtoFunc InitFunction
 + I Exec xrdb ~/.Xresources
 + I Exec exec conky
++ I Exec exec xkbset m
++ I Exec exec xkbset exp m
 + I Exec exec trayer --align right --width 10 --height 20 --transparent true --alpha 100 --tint 0xff8800
 
 DestroyFunc StartFunction

@@ -20,6 +20,7 @@ DestroyModuleConfig Panel: *
 *Panel: (32x32, Icon dock/xchat.png, Action(Mouse 1) ` Exec exec xchat`) 
 *Panel: (32x32, Icon dock/TM.png, Action(Mouse 1) ` Exec exec TM`)
 *Panel: (32x32, Icon dock/gimp.png, Action(Mouse 1) ` Exec exec gimp`)
+*Panel: (32x32, Icon dock/zeal.png, Action(Mouse 1) ` Exec exec zeal`)
 *Panel: (32x32, Icon dock/pidgin.png, Action(Mouse 1) `Exec exec pidgin`)
 *Panel: (32x32, Icon dock/firefox.png, Action(Mouse 1) `Exec exec firefox`)
 *Panel: (32x32, Icon dock/chrome.png, Action(Mouse 1) `Exec exec google-chrome-stable`,Action(Mouse 3) `Exec exec chromium`)

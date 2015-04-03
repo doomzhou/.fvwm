@@ -30,7 +30,7 @@ SetEnv fvwm_root "habak -ms"
 SetEnv fvwm_wallpaper_dir $[HOME]/.fvwm/wallpapers
 #SetEnv fvwm_wallpaper $[FVWM_USERDIR]/wallpapers/
 #by zlf
-Setenv fvwm_wallpaper $[fvwm_wallpaper_dir]/spyvsspy.jpg
+Setenv fvwm_wallpaper $[fvwm_wallpaper_dir]/download.jpg
 
 ###################################################################
 ##---------------------------------------------------------------##

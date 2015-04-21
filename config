@@ -63,8 +63,8 @@ AddToFunc StartFunction
 + I Module FvwmProxy
 + I Module FvwmEvent
 #+ I Module FvwmButtons -g 500x35+0-0 Panel
-+ I Module FvwmButtons -g 35x500+0+268 Panel
-+ I Module FvwmButtons -g 1366x22-0+0 MacMenu
++ I Module FvwmButtons -g 35x500+0-0 Panel
++ I Module FvwmButtons -g 1680x22-0+0 MacMenu
 + I Exec exec ${fvwm_tail} -e ${fvwm_script_path}/tail
 
 ###################################################################

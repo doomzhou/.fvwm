@@ -12,9 +12,9 @@ ImagePath ${HOME}/.fvwm/images:+
 ##---------------------------------------------------------------##
 ###################################################################
 
-SetEnv fvwm_terminal "terminator -m"
+#SetEnv fvwm_terminal "terminator -m"
 ##by zlf
-#SetEnv fvwm_terminal "konsole"
+SetEnv fvwm_terminal "konsole"
 SetEnv fvwm_tail "xterm -name tail -g 203x7+21+60 -tr +sb -rv -fg white"
 SetEnv fvwm_ncmpc "xterm -name NCMPC -g 51x46+21+60 -tr +sb -fg white -bg black -tint green"
 #SetEnv fvwm_editor "terminal "

@@ -65,7 +65,7 @@ Key     Down         WT      S       Move w+0 w+50p
 ##---------------------------------------------------------------##
 ### Wywoływanie programów
 
-Key     L            A       4       Exec exec xscreensaver-command --lock
+Key     L            A       M       Exec exec xscreensaver-command --lock
 Key     Escape       A       M       Exec exec $[fvwm_terminal]
 Key     F1           A       4       Exec exec google-chrome-stable
 Key     I            A       M       Exec exec FvwmCommand FvwmIdent

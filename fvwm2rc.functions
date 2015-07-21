@@ -144,7 +144,7 @@ DestroyFunc EWMH-Toggle
 AddToFunc EWMH-Toggle
 + I Interface_Hide $0 $1 $2 $3
 
-EWMH-Desktop 0 0 1 15
+EWMH-Desktop 0 0 1 5
 
 ##add by doom
 AddToFunc autohide

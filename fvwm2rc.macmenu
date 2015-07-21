@@ -2,7 +2,7 @@ DestroyModuleConfig MacMenu: *
 *MacMenu: Pixmap macosx/dock_center2.png
 *MacMenu: Colorset 100
 *MacMenu: Rows 22
-*MacMenu: Columns 1680
+*MacMenu: Columns 1600
 *MacMenu: Frame 0
 *MacMenu: Font "Shadow=1 se:xft:Lat2-Terminus16:encoding=iso10646-1:size=9"
 #*MacMenu: Font "Shadow=1 se:xft:WenQuanYi Micro Hei:encoding=iso10646-1:size=9"

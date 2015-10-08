@@ -80,7 +80,7 @@ add Control = Control_L
 keycode 135 = Pointer_Button2
 
 !modify Backspace
-keysym BackSpace = backslash bar
-keysym backslash bar = BackSpace
-keysym asciitilde = Escape
-keysym Escape = asciitilde
+!keysym BackSpace = backslash bar
+!keysym backslash bar = BackSpace
+!keysym asciitilde = Escape
+!keysym Escape = asciitilde

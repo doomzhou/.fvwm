@@ -67,7 +67,7 @@ Key     Down         WT      S       Move w+0 w+50p
 
 Key     L            A       M       Exec exec xscreensaver-command --lock
 Key     Escape       A       M       Exec exec $[fvwm_terminal]
-Key     1            A       M       Exec exec google-chrome-stable --touch-devices=123
+Key     e            A       M       Exec exec google-chrome-stable --touch-devices=123
 Key     I            A       M       Exec exec FvwmCommand FvwmIdent
 Key     Escape       A       C       Exec exec echo -n mem > /dev/null
 Key     M            A       M       Maximize

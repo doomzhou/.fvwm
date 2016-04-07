@@ -57,10 +57,10 @@ Key     F10          A       C       CursorMove 50p 0p
 ##---------------------------------------------------------------##
 ### Przesuwanie okien
 #
-Key     Left         WT      S       Move w-50p w+0
-Key     Right        WT      S       Move w+50p w+0
-Key     Up           WT      S       Move w+0 w-50p
-Key     Down         WT      S       Move w+0 w+50p
+Key     Left         WT      S       Move w-5p w+0
+Key     Right        WT      S       Move w+5p w+0
+Key     Up           WT      S       Move w+0 w-5p
+Key     Down         WT      S       Move w+0 w+5p
 #
 ##---------------------------------------------------------------##
 ### Wywoływanie programów

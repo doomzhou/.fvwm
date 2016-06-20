@@ -1,5 +1,5 @@
 ###################################################################
-##---------------------------------------------------------------##
+#---------------------------------------------------------------##
 ### Bindowanie klawiszy						###
 ##---------------------------------------------------------------##
 ###################################################################
@@ -18,7 +18,7 @@ Key     Tab          A       4       WindowList NoCurrentDeskTitle NoGeometry So
 Key     R            A       M       Restart
 Key     Q            A       M       Quit
 Key     Y            A       M       Exec exec notify-send "$(xsel)" "$(gt $(xsel))"
-#Key     F12          A       A       Close
+Key     F12          A       S       Close
 #Key 	K	     A	     C	     Exec exec rxvt -fn "xft:Monospace:pixelsize=14" -g 110x44+30+30 -name work -tr +sb -rv -bg blue 
 
 ##---------------------------------------------------------------##
@@ -66,6 +66,7 @@ Key     Down         WT      S       Move w+0 w+5p
 ### Wywoływanie programów
 
 Key     L            A       M       Exec exec xscreensaver-command --lock
+Key     T            A       M       Exec exec ~/bin/runner.py
 Key     Escape       A       M       Exec exec $[fvwm_terminal]
 Key     e            A       M       Exec exec google-chrome-stable --touch-devices=123
 Key     I            A       M       Exec exec FvwmCommand FvwmIdent

@@ -14,7 +14,7 @@ ImagePath ${HOME}/.fvwm/images:+
 
 #SetEnv fvwm_terminal "terminator -m"
 ##by zlf
-SetEnv fvwm_terminal "konsole"
+SetEnv fvwm_terminal "xterm"
 SetEnv fvwm_tail "xterm -name tail -g 203x7+21+60 -tr +sb -rv -fg white"
 SetEnv fvwm_ncmpc "xterm -name NCMPC -g 51x46+21+60 -tr +sb -fg white -bg black -tint green"
 #SetEnv fvwm_editor "terminal "
@@ -62,7 +62,7 @@ AddToFunc StartFunction
 + I Module FvwmCommandS
 + I Module FvwmProxy
 + I Module FvwmEvent
-#+ I Module FvwmButtons -g 500x35+0-0 Panel
+#+ I Module FvwmButtons -g 500x35+500-0 Panel
 + I Module FvwmButtons -g 35x500+0-0 Panel
 + I Module FvwmButtons -g 1366x22-0+0 MacMenu
 + I Exec exec ${fvwm_tail} -e ${fvwm_script_path}/tail

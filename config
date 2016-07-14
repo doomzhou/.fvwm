@@ -54,7 +54,7 @@ AddtoFunc InitFunction
 + I Exec exec dunst
 + I Exec exec xkbset m
 + I Exec exec xkbset exp m
-+ I Exec exec trayer --align right --width 10 --height 20 --transparent true --alpha 100 --tint 0xff8800
++ I Exec exec trayer --align right --width 10 --height 20 --transparent true --alpha 100 --tint 0x3333ff
 
 DestroyFunc StartFunction
 AddToFunc StartFunction

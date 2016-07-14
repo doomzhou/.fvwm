@@ -18,17 +18,17 @@ AddButtonStyle 1 \
     ActiveDown (Pixmap decoration/doom.png ) \
     Inactive   (Pixmap decoration/inact.png )
 AddButtonStyle 6 \
-    ActiveUp   (Pixmap decoration/D.png ) \
-    ActiveDown (Pixmap decoration/D.png ) \
-    Inactive   (Pixmap decoration/inactive.png )
+    ActiveUp   (Pixmap decoration/Sact.png ) \
+    ActiveDown (Pixmap decoration/Sact.png ) \
+    Inactive   (Pixmap decoration/Sinact.png )
 AddButtonStyle 4 \
-    ActiveUp   (Pixmap decoration/O.png ) \
-    ActiveDown (Pixmap decoration/O.png ) \
-    Inactive   (Pixmap decoration/inactive.png )
+    ActiveUp   (Pixmap decoration/ioact.png ) \
+    ActiveDown (Pixmap decoration/ioact.png ) \
+    Inactive   (Pixmap decoration/ioinact.png )
 AddButtonStyle 2 \
-    ActiveUp   (Pixmap decoration/M.png ) \
-    ActiveDown (Pixmap decoration/M.png ) \
-    Inactive   (Pixmap decoration/inactive.png )
+    ActiveUp   (Pixmap decoration/Oact.png ) \
+    ActiveDown (Pixmap decoration/Oact.png ) \
+    Inactive   (Pixmap decoration/Oinact.png )
 
 AddToFunc   arsen-decor-reload
 + I BorderStyle Simple -- HiddenHandles NoInset

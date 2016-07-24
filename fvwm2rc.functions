@@ -168,4 +168,4 @@ AddToFunc StartFunction
 DestroyFunc enter_handler
 AddToFunc enter_handler
 + I autohide Panel       250 500 S
-+ I autohide MacMenu     250 500 N
+#+ I autohide MacMenu     250 500 N
